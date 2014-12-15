@@ -8,14 +8,14 @@ class AgentsController < ApplicationController
     @agents = Agent.all
     respond_with(@agents)
   else
-    redirect_to error_acess_denied_path
-    #redirect_to '/'
+    redirect_to "/"
+ 
   end
     
   end
 
   def show
-     if (current_user.email==Agent.find_by_id(params[:id]).email )|| is_admin?
+     if (@agent.email == current_user.email )|| is_admin?
             respond_with(@agent)    
     else
       redirect_to error_acess_denied_path
