@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @agent.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @agent.email %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+<%= image_tag(@agent.image_url, :width => 80) if @agent.image.present? %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @agent.country %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @agent.city %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @agent.street %>
+</p>
+
+<p>
+  <strong>Birth:</strong>
+  <%= @agent.birth %>
+</p>
+
+<!--<%= link_to 'Edit', edit_agent_path(@agent) %> |-->
+<%= link_to 'Back', agents_path %>
